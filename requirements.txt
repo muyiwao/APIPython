@@ -4,4 +4,4 @@ sqlalchemy
 python-dotenv
 psycopg2-binary
 pytest
-
+great_expectations
