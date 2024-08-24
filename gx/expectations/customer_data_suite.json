@@ -1,0 +1,51 @@
+{
+  "data_asset_type": null,
+  "expectation_suite_name": "customer_data_suite",
+  "expectations": [
+    {
+      "expectation_type": "expect_column_to_exist",
+      "kwargs": {
+        "column": "id"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_not_be_null",
+      "kwargs": {
+        "column": "id"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_unique",
+      "kwargs": {
+        "column": "id"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_match_regex",
+      "kwargs": {
+        "column": "phone",
+        "regex": "^\\d{2} \\d{2} \\d{4}$"
+      },
+      "meta": {}
+    }
+  ],
+  "ge_cloud_id": null,
+  "meta": {
+    "citations": [
+      {
+        "batch_request": {
+          "data_asset_name": "public.customer_Muyiwa",
+          "data_connector_name": "default_inferred_data_connector_name",
+          "datasource_name": "postgres_datasource",
+          "limit": 1000
+        },
+        "citation_date": "2024-08-24T11:02:41.536322Z",
+        "comment": "Created suite added via CLI"
+      }
+    ],
+    "great_expectations_version": "0.18.19"
+  }
+}
