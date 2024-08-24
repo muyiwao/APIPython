@@ -3,6 +3,9 @@
 ## Overview
 This project is a Flask API that connects to a PostgreSQL database and exposes endpoints for data retrieval.
 
+## Enhancement
+Integrate automated testing using Pytest and implement data validation with Great Expectations to ensure data quality and robustness of the Flask API.
+
 ## Setup
 ### Clone the repository:
 ```bash
@@ -12,26 +15,35 @@ cd APIPython
 
 ## Project Structure
 ```bash
-   APIPython/
-   │
-   ├── src/
-   │   ├── __init__.py
-   │   ├── dbapi.py                 # This contains your Flask API script
-   │   ├── pythonPostgress.py
-   │
-   ├── k8s/
-   │   ├── deployment.yaml         # Kubernetes deployment file
-   │   └── service.yaml            # Kubernetes service file
-   │
-   ├── .env                        # Environment variables file (for local testing)
-   ├── .gitignore                  # Git ignore file
-   ├── Dockerfile                  # Dockerfile to build the Flask API container
-   ├── Jenkinsfile                 # Jenkins pipeline configuration file
-   ├── README.md                   # Project README file
-   ├── requirements.txt            # Python dependencies
-   └── data/
-    ├── customers.csv           # Sample data file for your application
-    └── data.json   
+APIPython/
+│
+├── great_expectations/
+│   ├── notebooks/
+│   │   ├── edit_expectation_suite.ipynb
+│
+├── src/
+│   ├── __init__.py
+│   ├── dbapi.py
+│   ├── pythonPostgress.py
+│
+├── tests/
+│   ├── __init__.py
+│   ├── test_dbapi.py
+
+├── k8s/
+│   ├── deployment.yaml
+│   └── service.yaml
+│
+├── .env
+├── .gitignore
+├── Dockerfile
+├── Jenkinsfile
+├── README.md
+├── requirements.txt
+└── data/
+    ├── customers.csv
+    └── data.json
+
 ```
 
 ## Documentation
