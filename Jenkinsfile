@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                git url: 'https://github.com/muyiwao/APIPython.git', branch: 'main'
+                git url: 'https://github.com/muyiwao/APIPython.git', branch: 'feature/add-testing-great-expectations'
             }
         }
         stage('Set Up Virtual Environment') {
@@ -75,10 +75,13 @@ pipeline {
         stage('Validate Data with Great Expectations') {
             steps {
                 script {
-                    sh '''
+                    def checkpointsDir = "${VENV_DIR}/path/to/gx/checkpoints/public"
+                    def latestCheckpoint = sh(script: "ls -1 ${checkpointsDir} | sort | tail -n 1", returnStdout: true).trim()
+
+                    sh """
                         source ${VENV_DIR}/bin/activate
-                        great_expectations checkpoint run gx/checkpoints/public/customer_Muyiwa_customer_data_suite.yml
-                    '''
+                        great_expectations checkpoint run ${checkpointsDir}/${latestCheckpoint}
+                    """
                 }
             }
         }
