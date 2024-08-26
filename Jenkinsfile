@@ -75,7 +75,7 @@ pipeline {
         stage('Validate Data with Great Expectations') {
             steps {
                 script {
-                    def checkpointsDir = "${VENV_DIR}/path/to/gx/checkpoints/public"
+                    def checkpointsDir = "${VENV_DIR}gx/checkpoints/public"
                     def latestCheckpoint = sh(script: "ls -1 ${checkpointsDir} | sort | tail -n 1", returnStdout: true).trim()
 
                     sh """
