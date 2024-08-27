@@ -22,6 +22,14 @@
         "column": "id"
       },
       "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_match_regex",
+      "kwargs": {
+        "column": "phone",
+        "regex": "^\\d{2} \\d{2} \\d{4}$"
+      },
+      "meta": {}
     }
   ],
   "ge_cloud_id": null,
@@ -34,7 +42,7 @@
           "datasource_name": "postgres_datasource",
           "limit": 1000
         },
-        "citation_date": "2024-08-26T15:41:51.678513Z",
+        "citation_date": "2024-08-27T12:37:45.868957Z",
         "comment": "Created suite added via CLI"
       }
     ],
